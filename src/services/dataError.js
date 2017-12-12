@@ -1,6 +1,6 @@
 export class DataError {
-  constructor(mesage, data) {
-    thsi.message = message;
+  constructor(message, data) {
+    this.message = message;
     this.data  = data;
   }
 }
