@@ -1,19 +1,8 @@
-class Vehicle {
-  constructor () {
-    this.gpsEnabled = true;
-  }
-}
-
-class Drone extends Vehicle {
-
-}
-
-class Car extends Vehicle {
-  constructor () {
-    super();
-    this.gpsEnabled = false;
-  }
-}
+import { Car } from './classes/car.js';
+import { Drone } from './classes/drone.js';
 
 let c = new Car();
-console.log(c.gpsEnabled);
+let d = new Drone();
+
+console.log(c);
+console.log(d);
