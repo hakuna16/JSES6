@@ -1,11 +1,13 @@
 import { Car } from '../classes/car.js';
 import { Drone } from '../classes/drone.js';
 import { fleet } from '../fleetData.js';
+import { DataError } from './dataError.js';
 
 export class FleetDataService {
   constructor() {
     this.cars = [];
     this.drones = [];
+    this.errors = [];
   }
 
   loadData(fleet) {
