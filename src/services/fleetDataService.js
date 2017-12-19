@@ -38,7 +38,7 @@ export class FleetDataService {
 
   loadCar(car) {
     let c = new Car(car.license, car.model, car.latlong);
-    c.mles = car.miles;
+    c.miles = car.miles;
     c.make = car.make;
     return c;
   }
@@ -54,9 +54,11 @@ export class FleetDataService {
       }
     }
 
-    if (Number.isNaN(Number.parselFloat(car.miles))) {
+    if (Number.isNaN(Number.parseFloat(car.miles))) {
       this.errors.push(new DataError('Invalid mileage', car));
       hasErrors = true;
     }
+
+    return hasErrors;
   }
 }

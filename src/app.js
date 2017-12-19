@@ -6,10 +6,11 @@ import $ from 'jquery';
 import { Button } from './ui/button.js';
 import { Image } from './ui/image.js';
 import { TitleBar } from './ui/titleBar.js';
+import { DataTable } from './ui/dataTable.js';
 
-let tb = new TitleBar('Our Application');
-tb.addLink('Home', '');
-tb.addLink('Cars', '');
-tb.addLink('Drones', '');
-tb.addLink('Map', '');
-tb.appendToElement($('body'));
+let headers = 'License Make Model Miles'.split(' ');
+let dataService = new FleetDataService();
+dataService.loadData(fleet);
+
+let dt = new DataTable(headers, dataService.cars);
+dt.appendToElement($('body'));
